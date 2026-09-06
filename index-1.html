@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Mousa - Community & Growth Marketing Specialist</title>
+<meta name="description" content="Mohammed Mousa - Community and growth marketing specialist across PUBG Mobile's official MENA ecosystem. Community growth strategy, ambassador/advocacy programs, event marketing, and Discord bot development.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312140F'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='%23F2A900' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
+
+<!--
+  ============================================================
+  HOW TO EDIT THIS FILE
+  ============================================================
+  1. All text content lives directly in the HTML below, edit it
+     like a normal document (Ctrl+F for the words you want to change).
+  2. All colors and fonts are defined once in the CSS variables
+     right below this comment (the ":root" block). Change a value
+     there and it updates everywhere automatically.
+  3. Sections are marked with capitalized labels in comments,
+     such as HERO, ZONE EXPANSION, ABOUT, EXPERIENCE TIMELINE,
+     so you can jump to the part you want with Ctrl+F.
+  4. To turn this into a real website: keep this file named
+     "index.html" and upload it to any static host: Netlify,
+     Vercel, GitHub Pages, etc. It is a single self-contained
+     file, so there is nothing else to upload alongside it.
+  5. The "Download CV" button has your CV file embedded directly
+     inside it (as a "data:" link), so it always works, even if
+     this HTML file is moved, renamed, or opened on its own with
+     no other files around it. When you have a newer CV version,
+     search this file for 'href="data:application' and ask
+     whoever helps you edit this file to re-embed the updated
+     one the same way.
+  ============================================================
+-->
+
+<style>
+  :root{
+    /* ---- COLORS: change these to re-theme the whole site ---- */
+    --bg:        #12140F;
+    --surface:   #181B13;
+    --surface-2: #1F2417;
+    --line:      #2B3122;
+    --amber:     #F2A900;
+    --amber-dim: #B8830A;
+    --teal:      #4FA6A0;
+    --text:      #EDEAE0;
+    --text-body: #C7CBB9;
+    --muted:     #8B9186;
+
+    /* ---- FONTS ---- */
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono:    'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+    --container: 1180px;
+    --radius: 10px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-padding-top:84px; }
+  @media (prefers-reduced-motion: no-preference){ html{ scroll-behavior:smooth; } }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-body);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{ color:var(--text); margin:0; font-weight:600; }
+  p{ margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; margin:0; padding:0; }
+  img{ max-width:100%; display:block; }
+
+  .container{
+    max-width:var(--container);
+    margin-inline:auto;
+    padding-inline:clamp(20px,5vw,56px);
+  }
+
+  section{ padding-block:clamp(56px,9vw,108px); }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:14px;
+  }
+
+  /* visible keyboard focus everywhere */
+  a:focus-visible, button:focus-visible, label:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+    border-radius:3px;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; z-index:999;
+    background:var(--amber); color:#12140F; padding:10px 16px; border-radius:6px;
+  }
+  .skip-link:focus{ left:16px; top:16px; }
+
+  /* ===== reveal-on-scroll (progressive enhancement) ===== */
+  .reveal{
+    opacity:0; transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ===== buttons ===== */
+  .btn{
+    display:inline-flex; align-items:center; gap:.5em;
+    padding:.85em 1.5em;
+    border-radius:999px;
+    font-family:var(--font-body); font-weight:600; font-size:.95rem;
+    border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--amber); color:#141506; }
+  .btn-primary:hover{ background:#ffc02e; }
+  .btn-ghost{ border-color:var(--line); color:var(--text); background:transparent; }
+  .btn-ghost:hover{ border-color:var(--teal); color:var(--teal); }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(18,20,15,.92);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:16px;
+  }
+  .nav-logo{
+    display:flex; align-items:baseline; gap:10px;
+    font-family:var(--font-mono); font-weight:700; color:var(--amber); font-size:.95rem;
+  }
+  .nav-logo span{
+    font-family:var(--font-body); font-weight:600; color:var(--text);
+    font-size:.95rem; letter-spacing:.02em;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:30px;
+    font-size:.92rem;
+  }
+  .nav-links a:hover{ color:var(--amber); }
+  .nav-links .nav-cta{
+    border:1px solid var(--amber); color:var(--amber);
+    padding:.5em 1.1em; border-radius:999px;
+  }
+  .nav-links .nav-cta:hover{ background:var(--amber); color:#141506; }
+
+  .nav-toggle-input{ position:absolute; opacity:0; pointer-events:none; }
+  .nav-toggle-label{
+    display:none; flex-direction:column; gap:5px; cursor:pointer;
+    padding:6px; margin:-6px;
+  }
+  .nav-toggle-label span{ width:22px; height:2px; background:var(--text); display:block; }
+
+  @media (max-width:860px){
+    .nav-toggle-label{ display:flex; }
+    .nav-links{
+      position:fixed; inset:65px 0 0 0; z-index:99;
+      background:var(--bg);
+      flex-direction:column; align-items:flex-start; gap:22px;
+      padding:36px clamp(20px,5vw,56px);
+      opacity:0; transform:translateY(-10px); pointer-events:none;
+      transition:opacity .25s ease, transform .25s ease;
+      overflow-y:auto;
+    }
+    .nav-toggle-input:checked ~ .nav-links{
+      opacity:1; transform:translateY(0); pointer-events:auto;
+    }
+    .nav-links a{ font-size:1.15rem; }
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{ position:relative; overflow:hidden; padding-block:clamp(70px,12vw,130px); }
+
+  .radar-wrap{
+    position:absolute; right:clamp(-160px,-4vw,0px); top:50%; transform:translateY(-50%);
+    width:min(560px,58vw); height:min(560px,58vw);
+    pointer-events:none;
+  }
+  .radar-ring{
+    position:absolute; border:1px solid rgba(79,166,160,.28); border-radius:50%;
+  }
+  .radar-ring.r1{ inset:0; }
+  .radar-ring.r2{ inset:14%; }
+  .radar-ring.r3{ inset:28%; }
+  .radar-ring.r4{ inset:42%; border-color:rgba(242,169,0,.35); }
+  .radar-sweep{
+    position:absolute; inset:0; border-radius:50%;
+    background:conic-gradient(from 0deg, transparent 0deg, rgba(242,169,0,.22) 30deg, transparent 70deg);
+    animation:spin 7s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ .radar-sweep{ animation:none; } }
+  @media (max-width:760px){ .radar-wrap{ display:none; } }
+
+  .hero-inner{ position:relative; max-width:760px; }
+  .hero h1{
+    font-family:var(--font-display); text-transform:uppercase;
+    font-size:clamp(2.6rem,7vw,4.6rem); line-height:.98; letter-spacing:.01em;
+    margin-bottom:18px;
+  }
+  .hero-role{
+    font-family:var(--font-display); color:var(--amber);
+    font-size:clamp(1.1rem,2.4vw,1.4rem); text-transform:uppercase; letter-spacing:.03em;
+    margin-bottom:20px;
+  }
+  .hero-bio{ font-size:1.08rem; max-width:56ch; margin-bottom:34px; }
+
+  .hero-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:34px; }
+
+  .status-pill{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--font-mono); font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .status-pill .dot{
+    width:8px; height:8px; border-radius:50%; background:#59d98c;
+    box-shadow:0 0 0 0 rgba(89,217,140,.6);
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(89,217,140,.55); }
+    70%{ box-shadow:0 0 0 8px rgba(89,217,140,0); }
+    100%{ box-shadow:0 0 0 0 rgba(89,217,140,0); }
+  }
+  @media (prefers-reduced-motion: reduce){ .status-pill .dot{ animation:none; } }
+
+  .hero-contact{ display:flex; flex-wrap:wrap; gap:22px; font-family:var(--font-mono); font-size:.86rem; color:var(--muted); }
+  .hero-contact a:hover{ color:var(--amber); }
+  .hero-contact .coords{ opacity:.65; margin-left:6px; }
+
+  /* ============================================================
+     ZONE EXPANSION (signature section)
+     ============================================================ */
+  .zone{ background:var(--surface); border-block:1px solid var(--line); }
+  .zone h2{
+    font-family:var(--font-display); font-weight:500; text-transform:none;
+    font-size:clamp(1.5rem,3.4vw,2.15rem); max-width:20ch; margin-bottom:48px;
+  }
+  .zone-list{ display:flex; flex-direction:column; gap:34px; }
+  .zone-top{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:12px; }
+  .zone-top h3{ font-family:var(--font-display); font-size:1.15rem; text-transform:uppercase; letter-spacing:.02em; }
+  .zone-badge{ font-family:var(--font-mono); color:var(--amber); font-size:.95rem; }
+  .zone-track{
+    position:relative; height:10px; border-radius:999px; background:var(--line); overflow:hidden;
+  }
+  .zone-fill{
+    position:absolute; inset:0; width:0;
+    border-radius:999px;
+    background:linear-gradient(90deg, var(--teal), var(--amber));
+    transition:width 1.3s cubic-bezier(.16,.8,.28,1);
+  }
+  .zone-item.in-view .zone-fill{ width:100%; }
+  .zone-nums{
+    display:flex; justify-content:space-between;
+    font-family:var(--font-mono); font-size:.82rem; color:var(--muted); margin-top:10px;
+  }
+  .zone-nums em{ font-style:normal; opacity:.7; }
+
+  /* ============================================================
+     ABOUT
+     ============================================================ */
+  .about-inner{ display:grid; grid-template-columns:1fr 1.5fr; gap:56px; align-items:start; }
+  .about h2{ font-family:var(--font-display); font-size:clamp(1.6rem,3.2vw,2.1rem); font-weight:500; }
+  .about-body p{ margin-bottom:16px; font-size:1.02rem; }
+  .about-body p:last-child{ margin-bottom:0; }
+  @media (max-width:760px){ .about-inner{ grid-template-columns:1fr; gap:20px; } }
+
+  /* ============================================================
+     ACHIEVEMENTS
+     ============================================================ */
+  .stats-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+  }
+  .stat-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 24px;
+  }
+  .stat-number{
+    font-family:var(--font-mono); font-weight:700; color:var(--amber);
+    font-size:clamp(1.7rem,3.4vw,2.1rem); line-height:1;
+    margin-bottom:10px;
+  }
+  .stat-label{ color:var(--text-body); font-size:.92rem; max-width:26ch; }
+  @media (max-width:760px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px){ .stats-grid{ grid-template-columns:1fr; } }
+
+  /* ============================================================
+     EXPERIENCE TIMELINE
+     ============================================================ */
+  .timeline-group{ margin-bottom:44px; }
+  .timeline-group:last-child{ margin-bottom:0; }
+  .timeline-org{
+    font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.05em;
+    color:var(--teal); font-size:.82rem;
+    padding-bottom:10px; margin-bottom:22px; border-bottom:1px solid var(--line);
+  }
+  .timeline{
+    display:flex; flex-direction:column; gap:28px;
+    border-left:1px solid var(--line);
+    padding-left:28px;
+  }
+  .timeline-item{ position:relative; }
+  .timeline-item::before{
+    content:""; position:absolute; left:-32.5px; top:6px;
+    width:8px; height:8px; background:var(--amber);
+    transform:rotate(45deg);
+  }
+  .timeline-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px; }
+  .timeline-role{ font-family:var(--font-display); font-weight:500; font-size:1.1rem; color:var(--text); }
+  .timeline-date{ font-family:var(--font-mono); font-size:.78rem; color:var(--muted); }
+  .timeline-desc{ font-size:.96rem; max-width:66ch; }
+
+  /* ============================================================
+     SKILLS / LOADOUT
+     ============================================================ */
+  .skills-group{ margin-bottom:30px; }
+  .skills-group:last-child{ margin-bottom:0; }
+  .skills-group h3{
+    font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em;
+    font-size:.8rem; color:var(--muted); margin-bottom:16px;
+  }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{
+    font-family:var(--font-mono); font-size:.8rem; letter-spacing:.01em;
+    background:var(--surface-2); border:1px solid var(--line); color:var(--text-body);
+    padding:.6em 1.1em; border-radius:999px;
+  }
+
+  /* ============================================================
+     LANGUAGES & EDUCATION
+     ============================================================ */
+  .split-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .split-grid h3{
+    font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em;
+    font-size:.8rem; color:var(--teal); margin-bottom:16px;
+  }
+  .split-grid .row{ display:flex; justify-content:space-between; padding-block:10px; border-bottom:1px solid var(--line); font-size:.98rem; }
+  .split-grid .row span:last-child{ color:var(--muted); font-family:var(--font-mono); font-size:.85rem; }
+  @media (max-width:640px){ .split-grid{ grid-template-columns:1fr; gap:28px; } }
+
+  /* ============================================================
+     CONTACT / FOOTER
+     ============================================================ */
+  .contact{ text-align:center; background:var(--surface); border-top:1px solid var(--line); }
+  .contact h2{
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(1.6rem,4vw,2.5rem); max-width:22ch; margin-inline:auto; margin-bottom:16px;
+  }
+  .contact p{ color:var(--muted); margin-bottom:36px; }
+  .contact .hero-actions{ justify-content:center; }
+
+  .footer{ padding-block:28px; border-top:1px solid var(--line); }
+  .footer-inner{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
+    font-family:var(--font-mono); font-size:.78rem; color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#top">MM <span>Mohammed Mousa</span></a>
+
+    <input type="checkbox" id="navToggle" class="nav-toggle-input">
+    <label for="navToggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#zone">Growth</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="radar-wrap" aria-hidden="true">
+      <div class="radar-ring r1"></div>
+      <div class="radar-ring r2"></div>
+      <div class="radar-ring r3"></div>
+      <div class="radar-ring r4"></div>
+      <div class="radar-sweep"></div>
+    </div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Sitrep // MENA Esports Operations</p>
+      <h1>Mohammed<br>Mousa</h1>
+      <p class="hero-role">Community &amp; Growth Marketing Specialist</p>
+      <p class="hero-bio">Three years growing PUBG Mobile's official MENA communities from the ground up — event marketing, ambassador-led advocacy programs, and hands-on engagement that took three official servers to 520K+ combined members.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:ellorddemo1000@gmail.com">Email Me</a>
+        <a class="btn btn-ghost" href="data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,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" download="Mohammed_Moussa_CV.docx">Download CV</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/demoo" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="status-pill"><span class="dot"></span>Available for growth roles</span>
+      </div>
+
+      <ul class="hero-contact">
+        <li><a href="tel:+201281726655">+20 128 172 6655</a></li>
+        <li><a href="mailto:ellorddemo1000@gmail.com">ellorddemo1000@gmail.com</a></li>
+        <li>Alexandria, Egypt <span class="coords">31.20N 29.92E</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== ZONE EXPANSION (community growth) ===== -->
+  <section class="zone" id="zone">
+    <div class="container">
+      <p class="eyebrow">Growth Metrics</p>
+      <h2>Community growth delivered across three official server tiers.</h2>
+
+      <div class="zone-list">
+        <div class="zone-item reveal">
+          <div class="zone-top"><h3>Egypt Server</h3><span class="zone-badge">+215%</span></div>
+          <div class="zone-track"><div class="zone-fill"></div></div>
+          <div class="zone-nums"><span>10,000 <em>start</em></span><span>31,500 <em>now</em></span></div>
+        </div>
+        <div class="zone-item reveal">
+          <div class="zone-top"><h3>Esports Server</h3><span class="zone-badge">+586%</span></div>
+          <div class="zone-track"><div class="zone-fill"></div></div>
+          <div class="zone-nums"><span>7,000 <em>start</em></span><span>48,000 <em>now</em></span></div>
+        </div>
+        <div class="zone-item reveal">
+          <div class="zone-top"><h3>Official MENA Server</h3><span class="zone-badge">+43%</span></div>
+          <div class="zone-track"><div class="zone-fill"></div></div>
+          <div class="zone-nums"><span>310,000 <em>start</em></span><span>442,000 <em>now</em></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <div>
+        <p class="eyebrow">Profile</p>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-body">
+        <p>I build and grow gaming communities from the ground up — designing engagement campaigns, ambassador and advocacy programs, and event marketing that turned three official PUBG Mobile MENA servers into hubs of 520K+ active members. I supervise a 70+ member ambassador team, and close the loop between community sentiment and the product roadmap by classifying and routing player feedback to the technical development team.</p>
+        <p>I run growth reporting and feedback collection through Google Sheets and Forms, manage the full community stack — Discord, WhatsApp, and Telegram — including custom Discord bots I build and maintain myself, and contributed to building a full community Discord server from scratch. My background in Marine Engineering shapes how I work: structured, methodical, and comfortable owning a growth problem end to end.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section class="achievements" id="achievements" style="background:var(--surface);border-block:1px solid var(--line);">
+    <div class="container">
+      <p class="eyebrow">After-Action Report</p>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:40px;">Key Achievements</h2>
+      <div class="stats-grid">
+        <div class="stat-card reveal"><div class="stat-number">2,300+</div><div class="stat-label">Team registrations generated through campaign &amp; event marketing</div></div>
+        <div class="stat-card reveal"><div class="stat-number">70+</div><div class="stat-label">Ambassadors recruited into a brand advocacy program I built</div></div>
+        <div class="stat-card reveal"><div class="stat-number">140+</div><div class="stat-label">Growth campaigns and tournaments organized end to end</div></div>
+        <div class="stat-card reveal"><div class="stat-number">250-300</div><div class="stat-label">Additional events supported across other servers</div></div>
+        <div class="stat-card reveal"><div class="stat-number">100+</div><div class="stat-label">Community sentiment reports compiled across platforms</div></div>
+        <div class="stat-card reveal"><div class="stat-number">Top Staff / Top Ambassador</div><div class="stat-label">Multiple-time award recipient</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE TIMELINE ===== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <p class="eyebrow">Deployment Log</p>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:44px;">Experience</h2>
+
+      <div class="timeline-group">
+        <p class="timeline-org">PUBG Mobile MENA Community (Official Discord) - Remote - 3 yrs 4 mos</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Community Insights &amp; Product Feedback Lead</span><span class="timeline-date">Jul 2025 - Present</span></div>
+            <p class="timeline-desc">Acts as engagement analyst for the region's Player #1 Team, closing the loop between community sentiment and the product roadmap: classifies, documents, and escalates player feedback through a dedicated tracking system, and streamlined reporting channels to speed up patch deployment.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Ambassador / Advocacy Program Lead</span><span class="timeline-date">Jan 2025 - Present</span></div>
+            <p class="timeline-desc">Built and scaled a 70+ member brand ambassador program from onboarding to performance tracking — a growth engine that directly expanded community reach. Uses Google Sheets to distribute tasks and track team and player data.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Community Operations &amp; Support</span><span class="timeline-date">Dec 2024 - Present</span></div>
+            <p class="timeline-desc">Supports growth operations across the MENA region through custom Discord bots I build and maintain myself, including an automation bot that cut recurring task times from hours to minutes; contributed to building a full community Discord server from scratch. Awarded Top Staff multiple times.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Egypt Ambassador — Community Growth Lead</span><span class="timeline-date">May 2023 - Sep 2026</span></div>
+            <p class="timeline-desc">Led grassroots growth marketing for the Egypt community: 140+ campaigns and events driving 2,300+ team sign-ups and 215% member growth (10K → 31,500). Owned registration, rule enforcement, and live event management through Sheets, Forms, WhatsApp, and Discord. Named Top Ambassador multiple times.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-group">
+        <p class="timeline-org">PUBG Mobile Egypt Community - Remote - 3 yrs</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Staff</span><span class="timeline-date">Jun 2024 - Sep 2026</span></div>
+            <p class="timeline-desc">Helped organize 7 completed seasons of the community's PMCI Tournament and is now helping run Season 8, expanding its reach to all Egyptian teams.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Event Coordinator</span><span class="timeline-date">Sep 2023 - Jul 2026</span></div>
+            <p class="timeline-desc">Specialized in organizing on-ground, offline community events and gatherings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-group">
+        <p class="timeline-org">Other Official Communities</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Staff, ESPORTS PUBGM MEA Community</span><span class="timeline-date">Apr 2025 - Present</span></div>
+            <p class="timeline-desc">Supports professional esports players and the wider community, scaling tournament participation to 1,000+ teams and growing the Esports server from 7K to 48K members.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Staff (Moderator), PUBG Mobile Somalia Community</span><span class="timeline-date">Apr 2026 - Sep 2026</span></div>
+            <p class="timeline-desc">Moderates official Discord channels in real time, enforcing guidelines and resolving conflicts.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-head"><span class="timeline-role">Staff, PUBG Mobile Metro Royal Community</span><span class="timeline-date">May 2026 - Present</span></div>
+            <p class="timeline-desc">Drives engagement for the in-game Metro Royal section through tailored events and moderation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS / TOOLS ===== -->
+  <section class="skills" id="skills" style="background:var(--surface);border-block:1px solid var(--line);">
+    <div class="container">
+      <p class="eyebrow">Loadout</p>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:40px;">Skills &amp; Tools</h2>
+
+      <div class="skills-group">
+        <h3>Core Skills</h3>
+        <div class="chip-row">
+          <span class="chip">Community Growth Strategy</span>
+          <span class="chip">Ambassador &amp; Advocacy Program Management</span>
+          <span class="chip">Event &amp; Campaign Marketing</span>
+          <span class="chip">Discord Bot Development &amp; Server Administration</span>
+          <span class="chip">Bilingual Community Marketing (Arabic/English)</span>
+          <span class="chip">Conflict Resolution &amp; Moderation</span>
+          <span class="chip">Bug Tracking &amp; QA Coordination</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3>Tools &amp; Systems</h3>
+        <div class="chip-row">
+          <span class="chip">Google Sheets &amp; Forms</span>
+          <span class="chip">Discord Bot Development (Tickets &amp; Automation)</span>
+          <span class="chip">Company Bug-Tracking Platform</span>
+          <span class="chip">WhatsApp &amp; Telegram Management</span>
+          <span class="chip">Discord Server Setup &amp; Administration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LANGUAGES & EDUCATION ===== -->
+  <section class="langedu">
+    <div class="container split-grid">
+      <div>
+        <h3>Languages</h3>
+        <div class="row"><span>Arabic</span><span>Native</span></div>
+        <div class="row"><span>English</span><span>Professional</span></div>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <div class="row"><span>Marine Engineering and Shipbuilding</span><span>Alexandria Univ.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="eyebrow" style="justify-content:center;display:flex;">Open Channel</p>
+      <h2>Open to community &amp; growth marketing, advocacy program, and community management roles</h2>
+      <p>Based in Alexandria, Egypt. Available for remote or on-site opportunities across the region.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:ellorddemo1000@gmail.com">Email Me</a>
+        <a class="btn btn-ghost" href="tel:+201281726655">+20 128 172 6655</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/demoo" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>Mohammed Mousa / Community &amp; Growth Marketing Specialist</p>
+    <p>&copy; <span id="year"></span> - built to be edited, see comments in the source.</p>
+  </div>
+</footer>
+
+<!-- fallback: guarantee full visibility if JavaScript is unavailable -->
+<noscript><style>.reveal{opacity:1!important;transform:none!important;} .zone-fill{width:100%!important;}</style></noscript>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // sync aria-expanded on the mobile menu toggle (checkbox hack handles the show/hide itself)
+  var navToggle = document.getElementById('navToggle');
+  var navLabel = document.querySelector('.nav-toggle-label');
+  if (navToggle && navLabel) {
+    navLabel.setAttribute('aria-expanded', 'false');
+    navToggle.addEventListener('change', function () {
+      navLabel.setAttribute('aria-expanded', navToggle.checked ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { navToggle.checked = false; });
+    });
+  }
+
+  // scroll-reveal
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
+</script>
+</body>
+</html>
